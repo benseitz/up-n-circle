@@ -1,4 +1,21 @@
 {
-  "name": "up-n-circle",
-  "regions": ["eu-west-1"]
+  "name": "spyfallx2",
+  "profile": "up-test",
+  "regions": ["us-east-1"],
+  "lambda": {
+    "policy": [
+      {
+        "Effect": "Allow",
+        "Resource": "*",
+        "Action": [
+          "dynamodb:Get*",
+          "dynamodb:List*",
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:UpdateItem",
+          "dynamodb:BatchGetItem"
+        ]
+      }
+    ]
+  }
 }
