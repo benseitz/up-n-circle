@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.15
+    steps:
+      - checkout
+      - run: yarn install
+  deploy:
+    docker:
+      - image: circleci/node:10.15
+    steps:
+      - run: set
+      - run:
+          name: Install up
+          command: curl -sf https://up.apex.sh/install | BINDIR=. sh
+      - run:
+          name: Deploy staging via up
+          command: ./up deploy staging
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build

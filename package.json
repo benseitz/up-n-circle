@@ -1,0 +1,11 @@
+{
+  "name": "up-n-circle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:benseitz/up-n-circle.git",
+  "author": "Ben Seitz <ben@matchbase.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
