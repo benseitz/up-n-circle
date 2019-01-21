@@ -15,6 +15,9 @@ jobs:
           name: Install awscli
           command: sudo pip install awscli
       - run:
+          name: Get IAM user
+          command: aws sts get-caller-identity
+      - run:
           name: Install up
           command: curl -sf https://up.apex.sh/install | BINDIR=. sh
       - run:
